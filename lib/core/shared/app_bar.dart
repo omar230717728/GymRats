@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 AppBar getAppBar(BuildContext context) {
-  return AppBar(
+  return 
+AppBar(
     backgroundColor: Colors.transparent, // Completely transparent
     elevation: 0, // Remove shadow
     scrolledUnderElevation: 0,

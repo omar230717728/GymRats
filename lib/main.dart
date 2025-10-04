@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/core/themes/app_theme.dart';
+import 'package:flutter_application_1/feature/cubit/favorites_cubit.dart';
 import 'package:flutter_application_1/feature/cubit/theme_cubit.dart';
 import 'package:flutter_application_1/feature/presentation/pages/main_page.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (_) => ThemeCubit()),
-       // 🔥 new cubit for tasks
+        BlocProvider(create: (_) => FavoritesCubit()),
       ],
       child: BlocBuilder<ThemeCubit, ThemeState>(
         builder: (context, state) {

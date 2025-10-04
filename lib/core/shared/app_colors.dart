@@ -20,6 +20,7 @@ class AppColorsGreen extends AppColors {
   @override
   Color get primary =>Color(0xFF29E33C);
 
+
   @override
   Color get secondary =>Color(0xFF80F988);
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/core/utils/machine.dart';
+import 'package:flutter_application_1/feature/presentation/pages/details_screen/machine_detail.dart';
 
 Widget buildMachinesGrid(BuildContext context, List<Machine> machines) {
   return Container(
@@ -40,10 +41,11 @@ Widget _buildMachineCard(BuildContext context, Machine machine) {
     child: InkWell(
       borderRadius: BorderRadius.circular(12),
       onTap: () {
-        // Navigate to machine details screen
-        // Navigator.push(context, MaterialPageRoute(
-        //   builder: (context) => MachineDetailScreen(machine: machine),
-        // ));
+        Navigator.of(context).push(
+    MaterialPageRoute(
+      builder: (context) => MachineDetailScreen(machine: machine),
+    ),
+  );
       },
       child: ClipRRect(
         borderRadius: BorderRadius.circular(12),
@@ -51,7 +53,8 @@ Widget _buildMachineCard(BuildContext context, Machine machine) {
           children: [
             // Machine Image
             Image.asset(
-              machine.imagePath,
+              // machine.imagePath,
+              'assets/body_part_images/Screenshot 2025-09-30 232210.jpg',
               fit: BoxFit.cover,
               width: double.infinity,
               height: double.infinity,

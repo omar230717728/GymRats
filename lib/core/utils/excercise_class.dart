@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class ExerciseCategory {
@@ -16,20 +15,21 @@ class ExerciseCategory {
 class ExerciseCategoryCard extends StatelessWidget {
   final ExerciseCategory category;
 
-  const ExerciseCategoryCard({Key? key, required this.category}) : super(key: key);
+  const ExerciseCategoryCard({Key? key, required this.category})
+    : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Card(
       elevation: 8,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(16),
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       child: InkWell(
         onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => category.targetScreen),
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => category.targetScreen,
+              fullscreenDialog: false, // Important: don't make it full screen
+            ),
           );
         },
         borderRadius: BorderRadius.circular(16),
@@ -37,7 +37,8 @@ class ExerciseCategoryCard extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
             image: DecorationImage(
-              image: AssetImage(category.imagePath),
+              // category.imagePath
+              image: AssetImage("assets/body_part_images/Screenshot 2025-09-30 232210.jpg"),
               fit: BoxFit.cover,
               colorFilter: ColorFilter.mode(
                 Colors.black.withOpacity(0.4),
@@ -48,11 +49,7 @@ class ExerciseCategoryCard extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(
-                Icons.fitness_center,
-                size: 40,
-                color: Colors.white,
-              ),
+              Icon(Icons.fitness_center, size: 40, color: Colors.white),
               SizedBox(height: 8),
               Text(
                 category.name,

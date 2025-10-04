@@ -58,10 +58,6 @@ class BackScreen extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: getAppBar(context),
-      body: buildMachinesGrid(context, armMachines),
-    );
+  return buildMachinesGrid(context, armMachines);
   }
 }
